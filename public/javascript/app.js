@@ -29,17 +29,18 @@ var read = function() {
 	document.getElementById("profiles").innerHTML = "";
 	for(var i = 0; i < profileDB.length; i+= 1) {
 		document.getElementById("profiles").innerHTML += 
-		"<li>" + 
-		"<ul>" + 
+		"<li class='panel panel-default col-sm-4'>" + 
+		"<ul class='panel-body'>" + 
 		"<li>" + profileDB[i].name + "</li>" +
 		"<li>" + profileDB[i].age + "</li>" +
 		"<li>" + profileDB[i].location + "</li>" +
-		"<li>" + "<img src='" + profileDB[i].picture + "'/>" + "</li>" +
-		"<li>" + "<button class='btn btn-warning' onclick='startUpdate(" + profileDB[i]._id + ")'>" + 
-		"Edit" + "</button>" + "</li>" + //Creates a button in the list that allows editing
-		"<li>" + "<button class='btn btn-danger' onclick='deleteProfile(" + profileDB[i]._id + ")'>" + 
-		"Delete" + "</button>" + "</li>" + //Creates a button in the list that allows deleting
-		"</ul>" + 
+		"<li>" + "<img class='img-responsive img-thumbnail' src='" + profileDB[i].picture + "'/>" + "</li>" +
+		"</ul>" + "<div class='panel-footer'>" + 
+		"<button class='btn btn-warning' onclick='startUpdate(" + profileDB[i]._id + ")'>" + 
+		"Edit" + "</button>" //Creates a button in the list that allows editing
+		+ "<button class='btn btn-danger' onclick='deleteProfile(" + profileDB[i]._id + ")'>" + 
+		"Delete" + "</button>" + //Creates a button in the list that allows deleting
+		"</div>" + 
 		"</li>";
 	}
 }
@@ -50,10 +51,11 @@ var startUpdate = function(id) {
 	for(var i = 0; i < profileDB.length; i += 1) {
 		if(profileDB[i]._id === id) {
 			document.getElementById("updateForm").innerHTML = 
-			"<input class='form-control' id='editName' value='" + profileDB[i].name + "'/>" +
-			"<input class='form-control' id='editAge' value='" + profileDB[i].age + "'/>" +
-			"<input class='form-control' id='editLocation' value='" + profileDB[i].location + "'/>" +
-			"<input class='form-control' id='editPicture' value='" + profileDB[i].picture + "'/>" +
+			"<h3 class='page-header text-center'>Update Contact</h3>" + "<div class='form-group'>" +
+			"<input class='form-control' id='editName' value='" + profileDB[i].name + "'/>" + "</div>" + "<div class='form-group'>" + 
+			"<input class='form-control' id='editAge' value='" + profileDB[i].age + "'/>" + "</div>" + "<div class='form-group'>" +
+			"<input class='form-control' id='editLocation' value='" + profileDB[i].location + "'/>" + "</div>" + "<div class='form-group'>" + 
+			"<input class='form-control' id='editPicture' value='" + profileDB[i].picture + "'/>" + "</div>" + "<div class='form-group'>" + 
 			"<button class='btn btn-success btn-block' onclick='finishUpdate(" + profileDB[i]._id + ")'>" + "Submit Update" + "</button>";
 		}
 	}
