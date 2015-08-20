@@ -34,7 +34,7 @@ var read = function() {
 		"<li>" + profileDB[i].name + "</li>" +
 		"<li>" + profileDB[i].age + "</li>" +
 		"<li>" + profileDB[i].location + "</li>" +
-		"<li>" + <"img src='" profileDB[i].picture + "'/>" + "</li>" +
+		"<li>" + "<img src='" + profileDB[i].picture + "'/>" + "</li>" +
 		"<li>" + "<button class='btn btn-warning' onclick='startUpdate(" + profileDB[i]._id + ")'>" + 
 		"Edit" + "</button>" + "</li>" + //Creates a button in the list that allows editing
 		"<li>" + "<button class='btn btn-danger' onclick='deleteProfile(" + profileDB[i]._id + ")'>" + 
