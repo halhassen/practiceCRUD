@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>My App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.css">
+	<link rel="stylesheet" type="text/css" href="/css/site.css">
+</head>
+<body class="container-fluid">
+	<h1 class="text-center text-info">Add Profile</h1><hr>
+	<div class="row">
+		<form class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+			<div class="form-group col-sm-6">
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="Name" id="name"/>
+				</div>	
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="Age" id="age"/>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="Location" id="location"/>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="Profile Picture (url)" id="picture"/>
+				</div>
+
+				<button class="btn btn-success btn-block" onclick="create()">Add Profile</button> <hr>
+
+				<ul id="profiles">
+
+				</ul>
+				<div id="updateForm">
+
+				</div>
+			</div>
+			<script src="/javascript/app.js"></script>
+		</body>
+		</html>
